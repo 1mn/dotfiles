@@ -533,3 +533,8 @@ fi
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
+
+# aliases
+alias snekchek='python3 -m snekchek'
+alias deploy='fab develenv deploy reset'
+alias unstable_deploy='fab unstableenv deploy'
