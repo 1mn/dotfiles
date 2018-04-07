@@ -538,3 +538,7 @@ fi
 alias snekchek='python3 -m snekchek'
 alias deploy='fab develenv deploy reset'
 alias unstable_deploy='fab unstableenv deploy'
+
+# environment variables
+export FLASK_DEBUG=1
+export PREFERRED_URL_SCHEME='http'
