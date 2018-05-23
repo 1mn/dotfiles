@@ -540,5 +540,6 @@ alias deploy='fab develenv deploy reset'
 alias unstable_deploy='fab unstableenv deploy'
 
 # environment variables
-export FLASK_DEBUG=1
-export PREFERRED_URL_SCHEME='http'
+export VIRTUALENV_ALWAYS_COPY=1
+export PIPENV_VENV_IN_PROJECT=1
+export PIPENV_IGNORE_VIRTUALENVS=1
