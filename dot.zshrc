@@ -537,3 +537,8 @@ fi
 # aliases
 alias deploy='fab develenv deploy'
 alias unstable_deploy='fab unstableenv deploy'
+
+# environment variables
+export VIRTUALENV_ALWAYS_COPY=1
+export PIPENV_VENV_IN_PROJECT=1
+export PIPENV_IGNORE_VIRTUALENVS=1
