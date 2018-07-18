@@ -535,6 +535,5 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 # aliases
-alias snekchek='python3 -m snekchek'
-alias deploy='fab develenv deploy reset'
+alias deploy='fab develenv deploy'
 alias unstable_deploy='fab unstableenv deploy'
