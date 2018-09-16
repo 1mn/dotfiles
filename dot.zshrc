@@ -537,6 +537,8 @@ fi
 # aliases
 alias deploy='fab develenv deploy'
 alias unstable_deploy='fab unstableenv deploy'
+alias win='sudo grub-reboot 4; reboot'
+alias windows='sudo grub-reboot 4; reboot'
 
 # environment variables
 export VIRTUALENV_ALWAYS_COPY=1
