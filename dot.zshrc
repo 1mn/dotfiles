@@ -535,8 +535,9 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 fi
 
 # aliases
-alias deploy='fab develenv deploy'
-alias unstable_deploy='fab unstableenv deploy'
+alias deploy_devel='fab develenv deploy'
+alias deploy_unstable='fab unstableenv deploy'
+alias deploy_test='fab develenv testdb deploy'
 alias win='sudo grub-reboot 4; reboot'
 alias windows='sudo grub-reboot 4; reboot'
 
