@@ -545,3 +545,5 @@ alias windows='sudo grub-reboot 4; reboot'
 export VIRTUALENV_ALWAYS_COPY=1
 export PIPENV_VENV_IN_PROJECT=1
 export PIPENV_IGNORE_VIRTUALENVS=1
+export PYTHONPATH="${PYTHONPATH}:~/git/dignio/v2-server"
+
