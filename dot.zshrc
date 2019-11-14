@@ -540,6 +540,7 @@ alias deploy_unstable='fab unstableenv deploy'
 alias deploy_test='fab develenv testdb deploy'
 alias win='sudo grub-reboot 4; reboot'
 alias windows='sudo grub-reboot 4; reboot'
+alias unfuck_monitor='xrandr --output DP-1 --mode 5120x1440 --rate 59.98'
 
 # environment variables
 export VIRTUALENV_ALWAYS_COPY=1
