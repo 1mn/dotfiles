@@ -550,3 +550,6 @@ export PYTHONPATH="${PYTHONPATH}:~/git/dignio/v2-server"
 
 # Add stuff to path
 export PATH="$PATH:/opt/flutter/bin"
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
+export ANDROID_HOME="/home/lmn/Android/Sdk"
+export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
