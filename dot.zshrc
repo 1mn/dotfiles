@@ -124,6 +124,9 @@ zplug "hlissner/zsh-autopair", defer:2
 # Docker completion
 zplug "felixr/docker-zsh-completion"
 
+# Kubectl and minikube completion
+zplug "nnao45/zsh-kubectl-completion"
+
 # Jump back to parent directory
 zplug "tarrasch/zsh-bd"
 
@@ -541,17 +544,29 @@ alias deploy_test='fab develenv testdb deploy'
 alias win='sudo grub-reboot 4; reboot'
 alias windows='sudo grub-reboot 4; reboot'
 alias unfuck_monitor='xrandr --output DP-1 --mode 5120x1440 --rate 59.98'
+alias aws2='/usr/local/bin/aws'
 
 # environment variables
 export VIRTUALENV_ALWAYS_COPY=1
 export PIPENV_VENV_IN_PROJECT=1
 export PIPENV_IGNORE_VIRTUALENVS=1
 export PYTHONPATH="${PYTHONPATH}:~/git/dignio/v2-server"
+export KUBECONFIG="/home/lmn/.kube/pydis-kubeconfig.yaml"
+export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+export ANDROID_HOME="/home/lmn/Android/Sdk"
 
 # Add stuff to path
 export PATH="$PATH:/opt/flutter/bin"
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"
-export ANDROID_HOME="/home/lmn/Android/Sdk"
 export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
+export PATH="/home/linuxbrew/.linuxbrew/opt/openjdk/bin:$PATH"
+export SELENIUM_DRIVER="/usr/local/bin/chromedriver"
+
+# pyenv
+export PATH="/home/lmn/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
