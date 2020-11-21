@@ -17,6 +17,11 @@ zsh_wifi_signal(){
     echo -n "%F{$color}\uf1eb" # \uf1eb is 
 }
 
+function add-secret() {
+  # add-secret site-env SECRET_KEY deadbeef
+  kubectl patch secret $1 --patch="{\"stringData\":{\"$2\": \"$3\"}}"
+}
+
 # =============================================================================
 #                                   Variables
 # =============================================================================
@@ -570,3 +575,8 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
