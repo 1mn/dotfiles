@@ -587,3 +587,7 @@ eval $(thefuck --alias fuuuck)
 eval $(thefuck --alias fuuuuck)
 eval $(thefuck --alias ffs)
 
+# Set up the GDrive, if it doesn't already exist.
+if [[ ! -e ~/GDrive ]]; then
+  google-drive-ocamlfuse ~/GDrive
+fi
