@@ -79,7 +79,7 @@ zplug "plugins/urltools", from:oh-my-zsh
 zplug "plugins/web-search", from:oh-my-zsh
 zplug "plugins/z", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/go", from:oh-my-zsh
+zplug "plugins/golang", from:oh-my-zsh
 zplug "plugins/svn", from:oh-my-zsh
 zplug "plugins/node", from:oh-my-zsh
 zplug "plugins/npm", from:oh-my-zsh
@@ -546,8 +546,8 @@ fi
 alias deploy_devel='fab develenv deploy'
 alias deploy_unstable='fab unstableenv deploy'
 alias deploy_test='fab develenv testdb deploy'
-alias win='sudo grub-reboot 4; reboot'
-alias windows='sudo grub-reboot 4; reboot'
+alias win='sudo grub-reboot 2; reboot'
+alias windows='sudo grub-reboot 2; reboot'
 alias unfuck_monitor='xrandr --output DP-1 --mode 5120x1440 --rate 59.98'
 alias aws2='/usr/local/bin/aws'
 
@@ -561,6 +561,7 @@ export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 export ANDROID_HOME="/home/$USER/Android/Sdk"
 
 # Add stuff to path
+export PATH="/home/leon/.local/bin:$PATH"
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"
@@ -568,10 +569,12 @@ export PATH="/home/linuxbrew/.linuxbrew/opt/openjdk/bin:$PATH"
 export SELENIUM_DRIVER="/usr/local/bin/chromedriver"
 
 # pyenv
-export PATH="/home/$USER/.pyenv/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
+# fuzzy finder
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # nvm
@@ -588,6 +591,12 @@ eval $(thefuck --alias fuuuuck)
 eval $(thefuck --alias ffs)
 
 # Set up the GDrive, if it doesn't already exist.
-if [[ ! -e ~/GDrive ]]; then
+if [[ ! -e ~/GDrive/terraform-config ]]; then
   google-drive-ocamlfuse ~/GDrive
 fi
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
+
+# direnv
+eval "$(direnv hook zsh)"
